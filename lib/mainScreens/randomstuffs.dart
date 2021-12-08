@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:math';
 import 'package:flip_card/flip_card.dart';
+import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,8 +14,14 @@ class RandomStuffs extends StatefulWidget {
 }
 
 var randomInt = 0;
+var randomColor = 0xFFFFD3D3;
 Random random = Random();
-
+List<int> colorArray = [
+  0xFFD3F5FF,
+  0xFFFFF3D3,
+  0xFFD3FFDD,
+  0xFFFFD3D3,
+];
 var randomStuffsArray = [];
 
 class _RandomStuffsState extends State<RandomStuffs> {
@@ -23,15 +30,17 @@ class _RandomStuffsState extends State<RandomStuffs> {
     readJson();
     setState(() {
       randomInt = random.nextInt(28);
+      randomColor = random.nextInt(3);
     });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    const  int cardColor = 0xFFFFD3D3;
+    const int cardColor = 0xFFFFD3D3;
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    var flipCardController = FlipCardController();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -41,25 +50,30 @@ class _RandomStuffsState extends State<RandomStuffs> {
           children: [
             ///Headline
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.only(top: 70, bottom: 25),
               child: Text(
                 "Boredom",
-                style: GoogleFonts.aBeeZee(fontSize: 25),
+                style: GoogleFonts.aBeeZee(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  
+                ),
               ),
             ),
 
             ///Color Card
             Expanded(
               child: FlipCard(
+                  controller: flipCardController,
                   front: colorCard(
                     width: width,
                     height: height,
-                    cardColor: cardColor,
+                    cardColor: colorArray[randomColor],
                   ),
                   back: colorCard(
                     height: height,
                     width: width,
-                    cardColor: 0xFFD3FFDD,
+                    cardColor: colorArray[randomColor],
                   )),
             ),
 
@@ -68,14 +82,15 @@ class _RandomStuffsState extends State<RandomStuffs> {
               onTap: () {
                 setState(() {
                   randomInt = random.nextInt(28);
+                  randomColor = random.nextInt(3);
                 });
               },
               child: Container(
-                height: 50,
-                width: 50,
+                height: 70,
+                width: 70,
                 decoration: BoxDecoration(
-                  color: const Color(cardColor),
-                  borderRadius: BorderRadius.circular(30),
+                  color: Color(colorArray[randomColor]),
+                  borderRadius: BorderRadius.circular(100),
                   boxShadow: [
                     BoxShadow(
                         offset: const Offset(5, 5),
@@ -91,7 +106,7 @@ class _RandomStuffsState extends State<RandomStuffs> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 65,
             )
           ],
         ),
@@ -125,10 +140,10 @@ class colorCard extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       margin: EdgeInsets.only(
-          left: width * .15,
-          right: width * .15,
-          bottom: height * .15,
-          top: height * .12),
+          left: width * .11,
+          right: width * .11,
+          bottom: height * .030,
+          top: height * .025),
       decoration: BoxDecoration(
         color: Color(cardColor),
         boxShadow: [
