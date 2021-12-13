@@ -1,91 +1,120 @@
 {
     "randomStuffs": [
         {
-            "stuf": "do anything"
+            "stuf": "do anything",
+            "des" : "cool"
         },
         {
-            "stuf": "do anything bal"
+            "stuf": "do anything bal",
+            "des" : "cool"
         },
         {
-            "stuf": "Text or Call a friend"
+            "stuf": "Text or Call a friend",
+            "des" : "cool"
         },
         {
-            "stuf": "Search “happy birthday + [your name]” on YouTube."
+            "stuf": "Search “happy birthday + [your name]” on YouTube.",
+            "des" : "cool"
         },
         {
-            "stuf": "Start reading a book"
+            "stuf": "Start reading a book",
+            "des" : "cool"
         },
         {
-            "stuf": "Play sports"
+            "stuf": "Play sports",
+            "des" : "cool"
         },
         {
-            "stuf": "Play indoor games"
+            "stuf": "Play indoor games",
+            "des" : "cool"
         },
         {
-            "stuf": "Do a guided meditation"
+            "stuf": "Do a guided meditation",
+            "des" : "cool"
         },
         {
-            "stuf": "Take a bath"
+            "stuf": "Take a bath",
+            "des" : "cool"
         },
         {
-            "stuf": "Go for a walk"
+            "stuf": "Go for a walk",
+            "des" : "cool"
         },
         {
-            "stuf": "Write a song."
+            "stuf": "Write a song.",
+            "des" : "cool"
         },
         {
-            "stuf": "Start a journal."
+            "stuf": "Start a journal.",
+            "des" : "cool"
         },
         {
-            "stuf": "Try to dance"
+            "stuf": "Try to dance",
+            "des" : "cool"
         },
         {
-            "stuf": "Write a poem"
+            "stuf": "Write a poem",
+            "des" : "cool"
         },
         {
-            "stuf": "Organise your room"
+            "stuf": "Organise your room",
+            "des" : "cool"
         },
         {
-            "stuf": "Watch some motivational video"
+            "stuf": "Watch some motivational video",
+            "des" : "cool"
         },
         {
-            "stuf": "Take some photos"
+            "stuf": "Take some photos",
+            "des" : "cool"
         },
         {
-            "stuf": "Watch a movie, serise or anime"
+            "stuf": "Watch a movie, serise or anime",
+            "des" : "cool"
         },
         {
-            "stuf": "Cook something"
+            "stuf": "Cook something",
+            "des" : "cool"
         },
         {
-            "stuf": "Design something on paper or different website"
+            "stuf": "Design something on paper or different website",
+            "des" : "cool"
         },
         {
-            "stuf": "Communicatie with an old friend"
+            "stuf": "Communicatie with an old friend",
+            "des" : "cool"
         },
         {
-            "stuf": "Edit your best photos"
+            "stuf": "Edit your best photos",
+            "des" : "cool"
         },
         {
-            "stuf": "Communicate with a stranger"
+            "stuf": "Communicate with a stranger",
+            "des" : "cool"
         },
         {
-            "stuf": "Watch self-help videos"
+            "stuf": "Watch self-help videos",
+            "des" : "cool"
         },
         {
-            "stuf": "Watch a webinar do a course"
+            "stuf": "Watch a webinar do a course",
+            "des" : "cool"
         },
         {
-            "stuf": "Ask yourself psychological questions"
+            "stuf": "Ask yourself psychological questions",
+            "des" : "cool"
         },
         {
-            "stuf": "Listen to a podcast"
+            "stuf": "Listen to a podcast",
+            "des" : "cool"
         },
         {
-            "stuf": "Change cover or wallpaper of social media, desktop, mobile, chrome"
+            "stuf": "Change cover or wallpaper of social media, desktop, mobile, chrome",
+            "des" : "cool"
         },
         {
-            "stuf": "Buy something pending"
+            "stuf": "Buy something pending",
+            "des" : "cool"
         }
     ]
 }

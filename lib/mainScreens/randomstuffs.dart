@@ -21,6 +21,10 @@ List<int> colorArray = [
   0xFFFFF3D3,
   0xFFD3FFDD,
   0xFFFFD3D3,
+  0xFFD3E0FF,
+  0xFFF1D3FF,
+  0xFFFFD3D3,
+  0xFFFFC1C1,
 ];
 var randomStuffsArray = [];
 
@@ -30,14 +34,13 @@ class _RandomStuffsState extends State<RandomStuffs> {
     readJson();
     setState(() {
       randomInt = random.nextInt(28);
-      randomColor = random.nextInt(3);
+      randomColor = random.nextInt(6);
     });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    const int cardColor = 0xFFFFD3D3;
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     var flipCardController = FlipCardController();
@@ -56,7 +59,6 @@ class _RandomStuffsState extends State<RandomStuffs> {
                 style: GoogleFonts.aBeeZee(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  
                 ),
               ),
             ),
@@ -65,12 +67,14 @@ class _RandomStuffsState extends State<RandomStuffs> {
             Expanded(
               child: FlipCard(
                   controller: flipCardController,
-                  front: colorCard(
+                  front: ColorCard(
+                   isFront: true,
                     width: width,
                     height: height,
                     cardColor: colorArray[randomColor],
                   ),
-                  back: colorCard(
+                  back: ColorCard(
+                    isFront: false,
                     height: height,
                     width: width,
                     cardColor: colorArray[randomColor],
@@ -82,7 +86,7 @@ class _RandomStuffsState extends State<RandomStuffs> {
               onTap: () {
                 setState(() {
                   randomInt = random.nextInt(28);
-                  randomColor = random.nextInt(3);
+                  randomColor = random.nextInt(6);
                 });
               },
               child: Container(
@@ -123,14 +127,17 @@ class _RandomStuffsState extends State<RandomStuffs> {
   }
 }
 
-class colorCard extends StatelessWidget {
-  const colorCard({
+class ColorCard extends StatelessWidget {
+  const ColorCard({
     Key? key,
     required this.width,
     required this.height,
     required this.cardColor,
+    required this.isFront,
+    
   }) : super(key: key);
 
+  final bool isFront;
   final double width;
   final double height;
   final int cardColor;
@@ -158,8 +165,8 @@ class colorCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Text(
-          randomStuffsArray[randomInt]["stuf"],
+        child: Text(isFront?
+          randomStuffsArray[randomInt]["stuf"]: randomStuffsArray[randomInt]["des"],
           textAlign: TextAlign.center,
           style: GoogleFonts.aBeeZee(fontSize: 25),
         ),
